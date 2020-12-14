@@ -7,17 +7,18 @@ import Header from './components/layout/Header';
 import About from './components/pages/About';
 //import { v4 as uuidv4 } from 'uuid'
 import Axios from 'axios';
+import technicians from './technicians-data';
 
 class App extends Component {
 
   state = {
-    todos: []
+    todos: technicians
   }
 
-  componentDidMount() {
-    Axios.get('http://jsonplaceholder.typicode.com/todos?_limit=10')
-      .then(res => this.setState({ todos: res.data }))
-  }
+  // componentDidMount() {
+  //   Axios.get('http://jsonplaceholder.typicode.com/todos?_limit=10')
+  //     .then(res => this.setState({ todos: res.data }))
+  // }
 
   //Delete Todo
   delTodo = (id) => {

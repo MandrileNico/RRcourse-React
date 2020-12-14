@@ -1,0 +1,38 @@
+.nametec {
+    width: 120px;
+    text-align: left;
+}
+.name2tech {
+    width: 120px;
+    text-align: left;
+}
+.emailtech {
+    width: 250px;
+    text-align: left;
+}
+.typeid {
+    width: 25px;
+    text-align: center;
+}
+.skillid{
+    width: 100px;
+    text-align: center;
+}
+.hourrate{
+    width: 60px;
+}
+.dailycap{
+    width: 10px;
+}
+.dateStyle {
+    margin-right: 10px;
+}
+
+.btnStyle  {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    padding: 5px 9px;
+    border-radius: 50%;
+    cursor: pointer;
+}
