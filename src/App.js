@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Todos from  './components/Todos';
-import AddTodo from  './AddTodo';
 import Header from './components/layout/Header';
 import About from './components/pages/About';
 import HeaderList from './components/layout/headerList';
@@ -38,17 +37,17 @@ class App extends Component {
   }
 
   //Add Todo
-  addTodo = (title) => {
+  addTodo = (first_name) => {
     Axios.post('https://rrcaldar.herokuapp.com/technicians', {
       //userId: uuidv4(),
-      title,
+      first_name,
       completed: false
     })
       .then(res =>this.setState({ todos: [...this.state.todos, res.data] }));
   }
 
   render() {
-    //console.log(this.state.todos)
+    console.log(this.state.todos)
     return (
       <Router>
         <div className="App">
@@ -57,11 +56,9 @@ class App extends Component {
             <Route exact path="/" render={props => (
               <React.Fragment>
                 <HeaderList />
-                <Todos todos={this.state.todos} 
-                markComplete={this.markComplete} 
+                <Todos todos={this.state.todos}  
                 delTodo={this.delTodo} />
                 <Addbutton />
-                
               </React.Fragment>
             )} />
             <Route path="/about" component={About} />

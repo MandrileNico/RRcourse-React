@@ -1,12 +1,15 @@
 import React from 'react'
+import AddTodo from  '../../AddTodo';
+
 
 export default function addform() {
     return (
-        <React.Fragment>
-            <div className="about">
-                <h1>Addform</h1>
-                <p>This is the addform</p>
-            </div>
-        </React.Fragment>
+        <div className="about">
+            <h1>Form for add a Technicians</h1>
+            <React.Fragment>
+                <AddTodo />
+            </React.Fragment>
+        </div>
+
     )
 }

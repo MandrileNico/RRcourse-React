@@ -1,0 +1,30 @@
+.techform{
+    display: flex;
+    flex-direction:row;
+    flex-flow: wrap;
+    padding-left: 10%;
+    padding-right: 10% ;
+    background-color: #f2f2f2;
+}
+input{
+    flex-basis: 35%;
+}
+.techform h2{
+    font-weight: 100;
+}
+.cage{
+    display: flex;
+    flex-direction: column;
+    flex: 35%;
+    padding: 5px;
+}
+.btn{
+    margin: auto;
+    width: fit-content;
+    display: inline-block;
+    border: none;
+    background: #555;
+    color: #fff;
+    padding:  7px 20px;
+    cursor: pointer;
+  }

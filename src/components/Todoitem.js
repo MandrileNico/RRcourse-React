@@ -10,8 +10,6 @@ export class TodosItem extends Component{
             background: '#f4f4f4',
             padding: '10px',
             borderBottom: '1px #ccc dotted',
-            textDecoration: this.props.todo.completed ?
-            'line-through' : 'none'
         }
     }
     render() {
@@ -56,7 +54,6 @@ export class TodosItem extends Component{
 // PropTypes
 TodosItem.propTypes = {
     todo: PropTypes.object.isRequired,
-    markComplete: PropTypes.func.isRequired,
     delTodo: PropTypes.func.isRequired,
 }
 
