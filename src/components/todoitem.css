@@ -1,6 +1,9 @@
+.idtech {
+    margin-left: 1%;
+}
 .nametec {
     width: 120px;
-    margin-left: 1%;
+    margin-left: 2%;
     text-align: left;
 }
 .name2tech {
@@ -32,12 +35,16 @@
     width: 10px;
     margin-left: 4%;
 }
+.updateheader{
+    width: fit-content;
+    margin-left: 6.5%;
+}
 .lastitems{
     display: flex;
-    margin-left: auto;
+    margin-left: 10%;
 }
 .dateStyle {
-    margin-right: 10%;
+    margin-left: 10%;
 }
 
 .btnStyle  {

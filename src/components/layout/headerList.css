@@ -1,11 +1,14 @@
+.idheader{
+    margin-left: 1%;
+}
 .nameheader {
-    margin-left: 2%;
+    margin-left: 1.8%;
     width: fit-content;
     text-align: center;
 }
 .name2header {
     width: fit-content;
-    margin-left: 5%;
+    margin-left: 4.8%;
     text-align: center;
 }
 .emailheader {
@@ -25,7 +28,7 @@
 }
 .hourrateheader{
     width: fit-content;
-    margin-left: 3.5%;
+    margin-left: 2.2%;
 }
 .dailycapheader{
     margin-left: 2%;

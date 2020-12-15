@@ -15,6 +15,9 @@ class headerList extends Component{
     render() {
         return (
         <div style={this.getStyle()}>
+            <p className="idheader">
+                Id
+            </p>
             <p className="nameheader">
                  First name  
             </p>
@@ -36,6 +39,9 @@ class headerList extends Component{
             <p className="dailycapheader">
                 Daily capacity 
             </p>
+            <p className='updateheader'>
+                    Last update
+                </p>
             <p className="actions">
                 Actions
             </p>

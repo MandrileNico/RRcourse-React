@@ -1,0 +1,19 @@
+.more{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1%;
+}
+.addtech{
+    display: flex;
+    font-size: 20px;
+    background-color: #ffffff;
+    align-self: center;
+    padding: 2px;
+    border-radius: 20%;
+}
+.material-icons{
+    color: #7DBB45;
+    align-self: center;
+    margin-left: 5px;
+}

@@ -1,7 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 import './todoitem.css';
-var f = new Date();
 
 export class TodosItem extends Component{
     getStyle = () => {
@@ -16,11 +15,11 @@ export class TodosItem extends Component{
         }
     }
     render() {
-        const { id, first_name, last_name, email, typeIds, skillsId, hour_rate, daily_capacity } = this.props.todo;
+        const { id, first_name, last_name, email, typeIds, skillsId, hour_rate, daily_capacity, updatedAt } = this.props.todo;
         return (
             <div style={this.getStyle()}>
-                <p>
-                    <input type="checkbox" onChange={this.props.markComplete.bind(this, id)} />
+                <p className="idtech">
+                    { id }
                 </p>
                 <p className="nametec">
                     { first_name } 
@@ -43,9 +42,11 @@ export class TodosItem extends Component{
                 <p className="dailycap">
                     { daily_capacity }
                 </p>
+                <p className="dateStyle">
+                    { updatedAt.slice(0 ,10) }
+                </p>
                 <p className="lastitems">
-                    <span className="dateStyle">{ f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() }</span>
-                    <button onClick={this.props.delTodo.bind(this, id)} className="btnStyle">x</button>
+                    <button onClick={this.props.delTodo.bind(this, id)} className="btnStyle"><i className="far fa-trash-alt"></i></button>
                 </p>
             </div>
         )

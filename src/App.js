@@ -6,6 +6,8 @@ import AddTodo from  './AddTodo';
 import Header from './components/layout/Header';
 import About from './components/pages/About';
 import HeaderList from './components/layout/headerList';
+import Addform from './components/pages/addform';
+import Addbutton from './components/layout/addbutton';
 import Axios from 'axios';
 
 class App extends Component {
@@ -13,13 +15,13 @@ class App extends Component {
   state = {
     todos: []
   }
-
+  // Get technicians, OK
   componentDidMount() {
     Axios.get('https://rrcaldar.herokuapp.com/technicians')
       .then(res => this.setState({ todos: res.data }))
   }
 
-  //Delete Todo
+  //Delete Todo, anda OK ojo q se eliminan en mongo
   delTodo = (id) => {
     Axios.delete(`https://rrcaldar.herokuapp.com/technicians/${id}`)
       .then(res => this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] }));
@@ -37,7 +39,7 @@ class App extends Component {
 
   //Add Todo
   addTodo = (title) => {
-    Axios.post('http://jsonplaceholder.typicode.com/todos', {
+    Axios.post('https://rrcaldar.herokuapp.com/technicians', {
       //userId: uuidv4(),
       title,
       completed: false
@@ -54,14 +56,16 @@ class App extends Component {
             <Header />
             <Route exact path="/" render={props => (
               <React.Fragment>
-                <AddTodo addTodo={this.addTodo} />
                 <HeaderList />
                 <Todos todos={this.state.todos} 
                 markComplete={this.markComplete} 
                 delTodo={this.delTodo} />
+                <Addbutton />
+                
               </React.Fragment>
             )} />
             <Route path="/about" component={About} />
+            <Route path="/addform" component={Addform} />
           </div>
         </div>
       </Router>
