@@ -7,7 +7,7 @@ export class TodosItem extends Component{
     getStyle = () => {
         return {
             display: 'flex',
-            justifyContent: 'space-between',
+            //justifyContent: 'space-between',
             background: '#f4f4f4',
             padding: '10px',
             borderBottom: '1px #ccc dotted',
@@ -43,7 +43,7 @@ export class TodosItem extends Component{
                 <p className="dailycap">
                     { daily_capacity }
                 </p>
-                <p>
+                <p className="lastitems">
                     <span className="dateStyle">{ f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear() }</span>
                     <button onClick={this.props.delTodo.bind(this, id)} className="btnStyle">x</button>
                 </p>

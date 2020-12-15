@@ -5,24 +5,23 @@ import Todos from  './components/Todos';
 import AddTodo from  './AddTodo';
 import Header from './components/layout/Header';
 import About from './components/pages/About';
-//import { v4 as uuidv4 } from 'uuid'
+import HeaderList from './components/layout/headerList';
 import Axios from 'axios';
-import technicians from './technicians-data';
 
 class App extends Component {
 
   state = {
-    todos: technicians
+    todos: []
   }
 
-  // componentDidMount() {
-  //   Axios.get('http://jsonplaceholder.typicode.com/todos?_limit=10')
-  //     .then(res => this.setState({ todos: res.data }))
-  // }
+  componentDidMount() {
+    Axios.get('https://rrcaldar.herokuapp.com/technicians')
+      .then(res => this.setState({ todos: res.data }))
+  }
 
   //Delete Todo
   delTodo = (id) => {
-    Axios.delete(`http://jsonplaceholder.typicode.com/todos/${id}`)
+    Axios.delete(`https://rrcaldar.herokuapp.com/technicians/${id}`)
       .then(res => this.setState({ todos: [...this.state.todos.filter(todo => todo.id !== id)] }));
   }
 
@@ -44,11 +43,10 @@ class App extends Component {
       completed: false
     })
       .then(res =>this.setState({ todos: [...this.state.todos, res.data] }));
-    
   }
 
   render() {
-    console.log(this.state.todos)
+    //console.log(this.state.todos)
     return (
       <Router>
         <div className="App">
@@ -57,6 +55,7 @@ class App extends Component {
             <Route exact path="/" render={props => (
               <React.Fragment>
                 <AddTodo addTodo={this.addTodo} />
+                <HeaderList />
                 <Todos todos={this.state.todos} 
                 markComplete={this.markComplete} 
                 delTodo={this.delTodo} />

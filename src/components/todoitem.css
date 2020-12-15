@@ -1,31 +1,43 @@
 .nametec {
     width: 120px;
+    margin-left: 1%;
     text-align: left;
 }
 .name2tech {
     width: 120px;
+    margin-left: 1%;
+
     text-align: left;
 }
 .emailtech {
     width: 250px;
+    margin-left: 1%;
     text-align: left;
 }
 .typeid {
     width: 25px;
+    margin-left: 1%;
     text-align: center;
 }
 .skillid{
     width: 100px;
+    margin-left: 2.5%;
     text-align: center;
 }
 .hourrate{
     width: 60px;
+    margin-left: 2%;
 }
 .dailycap{
     width: 10px;
+    margin-left: 4%;
+}
+.lastitems{
+    display: flex;
+    margin-left: auto;
 }
 .dateStyle {
-    margin-right: 10px;
+    margin-right: 10%;
 }
 
 .btnStyle  {
