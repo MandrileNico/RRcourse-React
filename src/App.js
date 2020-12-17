@@ -36,16 +36,6 @@ class App extends Component {
     }) });
   }
 
-  //Add Todo
-  addTodo = (first_name) => {
-    Axios.post('https://rrcaldar.herokuapp.com/technicians', {
-      //userId: uuidv4(),
-      first_name,
-      completed: false
-    })
-      .then(res =>this.setState({ todos: [...this.state.todos, res.data] }));
-  }
-
   render() {
     console.log(this.state.todos)
     return (
@@ -62,7 +52,7 @@ class App extends Component {
               </React.Fragment>
             )} />
             <Route path="/about" component={About} />
-            <Route path="/addform" component={Addform} />
+            <Route path="/addform" component={Addform} todos={this.state.todos} />
           </div>
         </div>
       </Router>

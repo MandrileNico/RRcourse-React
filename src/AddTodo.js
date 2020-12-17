@@ -14,12 +14,13 @@ export default class AddTodo extends Component {
     }
     onSubmit = (e) => {
         e.preventDefault();
-        this.props.addTodo(this.state.first_name);
-        this.setState({ first_name: ''});
+        this.props.addTodo(this.state.id,this.state.first_name, this.state.last_name, this.state.email, this.state.typeIds,
+            this.state.skillsId, this.state.hour_rate, this.state.daily_capacity);
+        this.setState({ id: '' }, { first_name: ''}, { last_name:'' }, { email:''}, { typeIds: ''}, { skillsId: ''},
+        { hour_rate: ''}, { daily_capacity: ''});
     }
     onChange = (e) => this.setState({ [e.target.name]: e.target.value });
     render() {
-        console.log(this.state.first_name, this.state.last_name)
         return (
             <form onSubmit={this.onSubmit} className = "techform">
                 <div className = "cage">
